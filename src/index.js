@@ -10,6 +10,5 @@ const listarCursosDisponibles = () => {
 };
 
 module.exports = {
-  listarCursosDisponibles,
-  test
+  listarCursosDisponibles
 }
