@@ -4,7 +4,8 @@
   "description": "Project with the Tecnológico de Antioquia to learn Node",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "hbs": "^4.0.3"
   },
   "devDependencies": {},
   "scripts": {

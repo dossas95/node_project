@@ -1,0 +1,38 @@
+[
+  {
+    "id": "ingles",
+    "estado": "disponible",
+    "nombre":"ingles",
+    "cost": 100000,
+    "decription": "Ingles 1",
+    "type": "presencial",
+    "hours": 6
+  },
+  {
+    "id": "matematica",
+    "estado": "disponible",
+    "nombre":"ingles",
+    "cost": 100000,
+    "decription": "Ingles 1",
+    "type": "presencial",
+    "hours": 6
+  },
+  {
+    "id": "react",
+    "estado": "disponible",
+    "nombre":"ingles",
+    "cost": 100000,
+    "decription": "Ingles 1",
+    "type": "presencial",
+    "hours": 6
+  },
+  {
+    "id": "node",
+    "estado": "cerrado",
+    "nombre":"ingles",
+    "cost": 100000,
+    "decription": "Ingles 1",
+    "type": "presencial",
+    "hours": 6
+  }
+]

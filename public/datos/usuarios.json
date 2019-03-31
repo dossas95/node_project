@@ -1,0 +1,23 @@
+[
+  {
+    "id": 123,
+    "nombre": "coord 1",
+    "correo": "coord1@owtf.com",
+    "phone": 5555555,
+    "type": 0
+  },
+  {
+    "id": 124,
+    "nombre": "Pepito",
+    "correo": "pepito@owtf.com",
+    "phone": 5555555,
+    "type": 1
+  },
+  {
+    "id": 124,
+    "nombre": "Pepito",
+    "correo": "pepito@owtf.com",
+    "phone": 5555555,
+    "type": 2
+  }
+]
