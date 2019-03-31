@@ -2,6 +2,14 @@ var express = require('express');
 const path = require('path');
 var app = express();
 
+const dirNode_modules = path.join(__dirname , '../node_modules')
+
+app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
+app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
+app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
+
+app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
+
 // Helpers
 require('./index_helper');
 
