@@ -1,0 +1,23 @@
+{
+  "name": "node_project",
+  "version": "1.0.0",
+  "description": "Project with the Tecnológico de Antioquia to learn Node",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dossas95/node_project.git"
+  },
+  "author": "OWTF",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dossas95/node_project/issues"
+  },
+  "homepage": "https://github.com/dossas95/node_project#readme"
+}
