@@ -4,17 +4,19 @@ const index = require('./index.js');
 hbs.registerHelper('cursos', () => {
   let content = 
   '<table class="table">\
-  <thead>\
-    <th>fsdfdsf</th>\
-    <th>dsfsdfds</th>\
+  <thead class="thead-dark">\
+    <th>Nombre</th>\
+    <th>Descripción</th>\
+    <th>Valor</th>\
   </thead>\
   <tbody>';
 
   index.listarCursosDisponibles().forEach(curso => {
     content = content + 
     '<tr>\
-    <td>'+ curso.id +'</td>\
-    <td>' + curso.nombre+ '</td>\
+    <td>'+ curso.nombre +'</td>\
+    <td>' + curso.descripcion+ '</td>\
+    <td>' + curso.costo+ '</td>\
     </tr>';
   });
     

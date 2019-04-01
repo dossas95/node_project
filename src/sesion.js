@@ -1,17 +1,30 @@
+const fs = require('fs');
+let sesionObject;
 
-let sesion;
-sesion = require('../public/datos/session.json');
-const sesion = !!sesion;
+try{
+  sesionObject = require('../public/datos/sesion.json');
+} catch(error) {
+  sesionObject = null;
+}
 
-let obtenerRol = () => {
+const sesion = !!sesionObject;
+
+const crearSesion = (sesion) => {
+  fs.writeFile('../public/datos/sesion.json', JSON.stringify(sesion), (err) => {
+    if(err) window.location.href = '/login'
+  });
+}
+
+const obtenerRol = () => {
   return sesion.rol
 }
 
-let obtenerId = () => {
+const obtenerId = () => {
   return sesion.id
 }
 
 module.exports = {
+  crearSesion,
   sesion,
   obtenerRol,
   obtenerId
