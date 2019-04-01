@@ -1,7 +1,12 @@
 
-let sesion;
-sesion = require('../public/datos/session.json');
-const sesion = !!sesion;
+let sesionObject;
+try{
+  sesionObject = require('../public/datos/session.json');
+}catch(error){
+  sesionObject = null;
+}
+
+const sesion = !!sesionObject;
 
 let obtenerRol = () => {
   return sesion.rol

@@ -13,6 +13,7 @@ app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
 
 // Helpers
 require('./index_helper');
+require('./adminCursos/adminCursos_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
 app.use(express.static(directorioPublico));
@@ -26,6 +27,10 @@ app.get('/', (req,res) => {
 
 app.get('/login', (req,res) => {
   res.render('login');
+});
+
+app.get('/adminCursos', (req, res) => {
+  res.render('adminCursos');
 });
 
 app.use((req, res, next)=>{

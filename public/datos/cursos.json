@@ -7,5 +7,14 @@
     "descripcion": "Ingles 1",
     "tipo": "presencial",
     "duracion": 6
+  },
+  {
+    "id": 2,
+    "estado": "sd",
+    "nombre":"ingles",
+    "costo": 100000,
+    "descripcion": "Ingles 1",
+    "tipo": "presencial",
+    "duracion": 6
   }
 ]
