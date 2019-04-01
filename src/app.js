@@ -13,6 +13,7 @@ app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
 
 // Helpers
 require('./index_helper');
+require('./miscursos_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
 app.use(express.static(directorioPublico));
@@ -28,6 +29,7 @@ app.get('/login', (req,res) => {
   res.render('login');
 });
 
+
 app.use((req, res, next)=>{
   if(!sesion){
     res.redirect('/');
@@ -35,6 +37,17 @@ app.use((req, res, next)=>{
     req.next();
   }
 });
+
+app.get('/miscursos', (req,res) => {
+  res.render('miscursos');
+});
+app.get('/salir/:curso', (req,res) => {
+  curso=parseInt(req.param("curso"));
+  const miscursos = require('./miscursos.js');
+  miscursos.salirDeCurso(curso);
+  res.redirect('../miscursos');
+});
+
 
 
 app.listen(3000, () => {
