@@ -4,6 +4,7 @@
   "description": "Project with the Tecnológico de Antioquia to learn Node",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.3.1",
     "express": "^4.16.4",
     "hbs": "^4.0.3",
