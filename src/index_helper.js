@@ -3,7 +3,7 @@ const index = require('./index.js');
 
 hbs.registerHelper('cursos', () => {
   let content = 
-  '<table>\
+  '<table class="table">\
   <thead>\
     <th>fsdfdsf</th>\
     <th>dsfsdfds</th>\

@@ -1,6 +1,7 @@
 var express = require('express');
 const path = require('path');
 var app = express();
+const {sesion} = require('./sesion');
 
 const dirNode_modules = path.join(__dirname , '../node_modules')
 
@@ -26,6 +27,15 @@ app.get('/', (req,res) => {
 app.get('/login', (req,res) => {
   res.render('login');
 });
+
+app.use((req, res, next)=>{
+  if(!sesion){
+    res.redirect('/');
+  } else{
+    req.next();
+  }
+});
+
 
 app.listen(3000, () => {
   console.log('Escuchando en el puerto 3000');
