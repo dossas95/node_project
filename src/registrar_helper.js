@@ -9,7 +9,7 @@ hbs.registerHelper('registrado', (nom, ced, cor, tel, cont) => {
         correo: cor,
         telefono: tel,
         contrasena: cont,
-        rol: 1
+        rol: 2
     }
     listaUsuarios.push(usr);
     let datos = JSON.stringify(listaUsuarios);
