@@ -1,6 +1,8 @@
-var express = require('express');
+const express = require('express');
 const path = require('path');
-var app = express();
+const app = express();
+const bodyParser = require('body-parser');
+
 const {sesion} = require('./sesion');
 
 const dirNode_modules = path.join(__dirname , '../node_modules')
@@ -8,11 +10,13 @@ const dirNode_modules = path.join(__dirname , '../node_modules')
 app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
 app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
 app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
-
 app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
+
+app.use(bodyParser.urlencoded({extended: false}));
 
 // Helpers
 require('./index_helper');
+require('./login/validar-datos_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
 app.use(express.static(directorioPublico));
@@ -34,6 +38,13 @@ app.use((req, res, next)=>{
   } else{
     req.next();
   }
+});
+
+app.get('/validar-datos', (req,res) => {
+  res.render('validar-datos', {
+    correo: req.query.correo,
+    pass: req.query.pass
+  });
 });
 
 

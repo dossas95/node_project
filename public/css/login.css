@@ -1,0 +1,50 @@
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.login{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: aliceblue;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.title{
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+.volver{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.volver:hover{
+  cursor: pointer;
+}
+
+form{
+  margin: 20px;
+  text-align: left
+}
+
+.btn-section{
+  width: 100%;
+  text-align: center;
+}
+
+
+
