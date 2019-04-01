@@ -11,11 +11,13 @@ app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
 app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
 app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
 app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
+app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Helpers
 require('./index_helper');
+require('./registrar_helper');
 require('./login/validar-datos_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
@@ -31,6 +33,21 @@ app.get('/', (req,res) => {
 app.get('/login', (req,res) => {
   res.render('login');
 });
+
+app.get('/registro', (req,res) => {
+  res.render('registro');
+});
+
+app.get('/registrar', (req,res) => {
+  res.render('registrar', {
+    usuario: req.query.nombre,
+    cedula: req.query.id,
+    correo: req.query.correo,
+    telefono: req.query.telefono,
+    contrasena: req.query.contrasena
+  })
+})
+
 
 app.use((req, res, next)=>{
   if(!sesion){

@@ -1,18 +1,1 @@
-[
-  {
-    "id": 123,
-    "nombre": "coord 1",
-    "correo": "coord1@owtf.com",
-    "celular": 5555555,
-    "rol": 0,
-    "contrasena": 1234
-  },
-  {
-    "id": 124,
-    "nombre": "Edwin alvarez",
-    "correo": "edwin@owtf.com",
-    "celular": 5555555,
-    "rol": 2,
-    "contrasena": 1234
-  }
-]
+[{"id":123,"nombre":"coord 1","correo":"coord1@owtf.com","celular":5555555,"rol":0,"contrasena":1234},{"rol":1},{"rol":1},{"rol":1},{"id":"12345","nombre":"David","correo":"david@owtf.com","telefono":"123456","contrasena":"123asd","rol":1}]
