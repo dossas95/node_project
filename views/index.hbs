@@ -4,15 +4,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!--Bootstrap css -->
   <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+  <link rel="stylesheet" href="../css/index.css">
   <title>OWTF</title>
 </head>
 
 <body class="container">
   {{session}}
-  <h1>Bienvenido a OWTF Apredizaje permanente</h1>
-  <h4 onclick="document.location.href='login'">login</h4>
-  {{{cursos}}}
+  <div class="title">Bienvenido a OWTF Apredizaje permanente</div>
+  <div class=" menu">
+    <div class="login" onclick="document.location.href='login'">Entrar</div>
+    <div class="registro" onclick="document.location.href='registro'">Registrarse</div>
+  </div>
 
+  {{{cursos}}}
 
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
