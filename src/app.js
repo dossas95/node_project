@@ -66,14 +66,6 @@ app.get('/logout', (req, res) => {
   }
 });
 
-app.use((req, res, next)=>{
-  if(!sesion){
-    res.redirect('/');
-  } else{
-    req.next();
-  }
-});
-
 app.get('/adminCursos', (req, res) => {
   res.render('adminCursos');
 });
