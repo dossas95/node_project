@@ -15,6 +15,7 @@ const sesion = !!sesionObject;
 
 const obtenerRol = () => {
   cargarSesion();
+  console.log(sesionObject.rol);
   return sesionObject.rol;
 }
 
