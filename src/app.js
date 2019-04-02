@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const {sesion} = require('./sesion');
+const {sesion, obtenerRol} = require('./sesion');
 
 const dirNode_modules = path.join(__dirname , '../node_modules')
 
@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Helpers
 require('./index_helper');
-require('./registrar_helper');
+require('./registro/registrar_helper');
 require('./login/validar-datos_helper');
-require('./crear_helper');
+require('./crear-curso/crear_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
 app.use(express.static(directorioPublico));
@@ -49,8 +49,27 @@ app.post('/registrar', (req,res) => {
   })
 });
 
+app.get('/validar-datos', (req,res) => {
+  res.render('validar-datos', {
+    correo: req.query.correo,
+    pass: req.query.pass
+  });
+});
+
+app.use((req, res, next)=>{
+  if(!sesion){
+    res.redirect('/');
+  } else{
+    req.next();
+  }
+});
+
 app.get('/crear-curso', (req, res) => {
-  res.render('crear-curso');
+  if (obtenerRol()==0){
+    res.render('crear-curso');
+  } else{
+    res.render('validar-datos');
+  }
 });
 
 app.post('/crear', (req,res) => {
@@ -64,20 +83,7 @@ app.post('/crear', (req,res) => {
   })
 })
 
-app.use((req, res, next)=>{
-  if(!sesion){
-    res.redirect('/');
-  } else{
-    req.next();
-  }
-});
 
-app.get('/validar-datos', (req,res) => {
-  res.render('validar-datos', {
-    correo: req.query.correo,
-    pass: req.query.pass
-  });
-});
 
 
 app.listen(3000, () => {
