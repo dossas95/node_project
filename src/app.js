@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Helpers
 require('./index_helper');
+require('./miscursos_helper');
 require('./registro/registrar_helper');
 require('./login/validar-datos_helper');
 require('./crear-curso/crear_helper');
@@ -62,6 +63,16 @@ app.use((req, res, next)=>{
   } else{
     req.next();
   }
+});
+
+app.get('/miscursos', (req,res) => {
+  res.render('miscursos');
+});
+app.get('/salir/:curso', (req,res) => {
+  curso=parseInt(req.param("curso"));
+  const miscursos = require('./miscursos.js');
+  miscursos.salirDeCurso(curso);
+  res.redirect('../miscursos');
 });
 
 app.get('/crear-curso', (req, res) => {

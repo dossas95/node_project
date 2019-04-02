@@ -1,1 +1,11 @@
-[{"id":1,"estado":"disponible","nombre":"ingles","valor":100000,"descripcion":"Ingles 1","modalidad":"presencial","intensidad":6}]
+[
+  {
+    "id": 1,
+    "estado": "disponible",
+    "nombre": "ingles",
+    "valor": 100000,
+    "descripcion": "Ingles 1",
+    "modalidad": "presencial",
+    "intensidad": 6
+  }
+]

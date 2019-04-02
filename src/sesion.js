@@ -17,6 +17,7 @@ const crearSesion = (sesion) => {
 
 const obtenerRol = () => {
   return sesion.rol
+
 }
 
 const obtenerId = () => {
