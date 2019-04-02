@@ -1,29 +1,11 @@
 [
-    {
-        "id": 1,
-        "estado": "disponible",
-        "nombre": "programacion",
-        "costo": 100000,
-        "descripcion": "Ingles 1",
-        "tipo": "presencial",
-        "duracion": 6
-    },
-    {
-        "id": 2,
-        "estado": "disponible",
-        "nombre": "ingles",
-        "costo": 100000,
-        "descripcion": "Ingles 1",
-        "tipo": "presencial",
-        "duracion": 6
-    },
-    {
-        "id": 3,
-        "estado": "disponible",
-        "nombre": "ingles",
-        "costo": 100000,
-        "descripcion": "Ingles 1",
-        "tipo": "presencial",
-        "duracion": 6
-    }
+  {
+    "id": 1,
+    "estado": "disponible",
+    "nombre": "ingles",
+    "valor": 100000,
+    "descripcion": "Ingles 1",
+    "modalidad": "presencial",
+    "intensidad": 6
+  }
 ]

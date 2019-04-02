@@ -1,0 +1,24 @@
+.menu{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.title{
+  text-align: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+.registro{
+  margin-left: 10px;
+}
+
+.registro:hover{
+  cursor: pointer;
+}
+
+.login:hover{
+  cursor: pointer;
+}
