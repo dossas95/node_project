@@ -11,10 +11,16 @@ hbs.registerHelper('registrado', (nom, ced, cor, tel, cont) => {
         contrasena: cont,
         rol: 2
     }
-    listaUsuarios.push(usr);
-    let datos = JSON.stringify(listaUsuarios);
-    fs.writeFile('public/datos/usuarios.json', datos, (err) =>{
-        if (err) throw (err);
-        console.log('Registrado');
+    let validar = listaUsuarios.find(repeat => repeat.id == ced || repeat.correo == cor)
+    if (!validar){
+        listaUsuarios.push(usr);
+        let datos = JSON.stringify(listaUsuarios);
+        fs.writeFile('public/datos/usuarios.json', datos, (err) =>{
+        if (err) throw(err);
+            console.log('registrado');
     });
+        return('El usuario ha sido registrado satisfactoriamente');
+    }else{
+        return('Ya existe un usuario registrado con los valores indicados');
+    }
 })

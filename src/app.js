@@ -38,13 +38,13 @@ app.get('/registro', (req,res) => {
   res.render('registro');
 });
 
-app.get('/registrar', (req,res) => {
+app.post('/registrar', (req,res) => {
   res.render('registrar', {
-    usuario: req.query.nombre,
-    cedula: req.query.id,
-    correo: req.query.correo,
-    telefono: req.query.telefono,
-    contrasena: req.query.contrasena
+    usuario: req.body.nombre,
+    cedula: req.body.id,
+    correo: req.body.correo,
+    telefono: req.body.telefono,
+    contrasena: req.body.contrasena
   })
 })
 
