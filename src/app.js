@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const {sesion, obtenerRol} = require('./sesion');
+const {sesion, obtenerRol, eliminarSesion} = require('./sesion');
 
 const dirNode_modules = path.join(__dirname , '../node_modules');
 
@@ -37,24 +37,6 @@ app.get('/login', (req,res) => {
   res.render('login');
 });
 
-app.get('/adminCursos', (req, res) => {
-  res.render('adminCursos');
-});
-
-app.get('/cerrar/:curso', (req,res) => {
-  curso = parseInt(req.param("curso"));
-  const adminCursos = require('./adminCursos/adminCursos');
-  adminCursos.cerrarCurso(curso);
-  res.redirect('../adminCursos');
-});
-
-app.get('/eliminar/:usuario', (req,res) => {
-  usuario = parseInt(req.param("usuario"));
-  const adminCursos = require('./adminCursos/adminCursos');
-  adminCursos.eliminarUsuario(usuario);
-  res.redirect('../adminCursos');
-});
-
 app.get('/registro', (req,res) => {
   res.render('registro');
 });
@@ -76,6 +58,14 @@ app.get('/validar-datos', (req,res) => {
   });
 });
 
+app.get('/logout', (req, res) => {
+  if (eliminarSesion()) {
+    res.redirect('login');
+  } else {
+    res.redirect('validar-datos');
+  }
+});
+
 app.use((req, res, next)=>{
   if(!sesion){
     res.redirect('/');
@@ -84,9 +74,28 @@ app.use((req, res, next)=>{
   }
 });
 
+app.get('/adminCursos', (req, res) => {
+  res.render('adminCursos');
+});
+
+app.get('/cerrar/:curso', (req,res) => {
+  curso = parseInt(req.param("curso"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.cerrarCurso(curso);
+  res.redirect('../adminCursos');
+});
+
+app.get('/eliminar/:usuario', (req,res) => {
+  usuario = parseInt(req.param("usuario"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.eliminarUsuario(usuario);
+  res.redirect('../adminCursos');
+});
+
 app.get('/miscursos', (req,res) => {
   res.render('miscursos');
 });
+
 app.get('/salir/:curso', (req,res) => {
   curso=parseInt(req.param("curso"));
   const miscursos = require('./miscursos.js');

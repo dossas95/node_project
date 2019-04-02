@@ -12,6 +12,17 @@
   text-align: center;
 }
 
+.salir{
+  width: 100%;
+  margin-top: 10px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.salir:hover{
+  cursor: pointer;
+}
+
 .accion {
   width: 100%;
   margin-top: 30px;

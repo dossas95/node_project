@@ -22,12 +22,30 @@ hbs.registerHelper('validarDatosLogin', (correo, pass) => {
       <div class="name">\
         ' + usuario.nombre + '\
       </div>\
+      <div class="salir">\
+        <a href="/logout">Salir</a>\
+      </div>\
       <div class="accion">\
         Realizar acciones de ' + rol + ':\
       </div>';
 
       if (usuario.rol == 1 || usuario.rol == 2) {
-        content = content +'<a class="user-action" href="/miscursos">Ver mis cursos</a>';
+        content = content +'<div>\
+        <a class="user-action" href="/cursos-disponibles">Ver cursos disponibles</a>\
+        </div>\
+        <div>\
+        <a class="user-action" href="/miscursos">Ver mis cursos</a>\
+        </div>';
+      } else {
+        content = content +'<div>\
+        <a class="user-action" href="/crear-curso">Crear curso</a>\
+        </div>\
+        <div>\
+        <a class="user-action" href="/adminCursos">Administrar cursos</a>\
+        </div>\
+        <div>\
+        <a class="user-action" href="/admin-users">Administrar usuarios</a>\
+        </div>';
       }
 
     return content;

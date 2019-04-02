@@ -7,5 +7,13 @@
     "descripcion": "Ingles 1",
     "modalidad": "presencial",
     "intensidad": 6
+  },
+  {
+    "id": "123456",
+    "estado": "disponible",
+    "nombre": "java",
+    "valor": "100000",
+    "descripcion": "Esto es java",
+    "intensidad": "7h"
   }
 ]
