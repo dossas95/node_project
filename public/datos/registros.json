@@ -1,1 +1,19 @@
-[{"curso":1,"participante":124,"interes":0},{"curso":3,"participante":123,"interes":1}]
+[
+    {
+      "curso": 1,
+      "participante": 123,
+      "interes": 0
+    },
+  
+    {
+      "curso": 2,
+      "participante": 125,
+      "interes": 0
+    },
+    {
+      "curso": 1,
+      "participante": 124,
+      "interes": 0
+    }
+  
+  ]

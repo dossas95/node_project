@@ -9,6 +9,15 @@ const listarCursosDisponibles = () => {
   }
 };
 
+const usuariosInscritos = () => {
+  try {
+    registros = require('../public/datos/registros.json');
+    return registros;
+  }catch (error){
+    return registros = [];
+  }
+}
 module.exports = {
-  listarCursosDisponibles
+  listarCursosDisponibles,
+  usuariosInscritos
 }

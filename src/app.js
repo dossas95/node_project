@@ -5,18 +5,19 @@ const bodyParser = require('body-parser');
 
 const {sesion, obtenerRol} = require('./sesion');
 
-const dirNode_modules = path.join(__dirname , '../node_modules')
+const dirNode_modules = path.join(__dirname , '../node_modules');
 
 app.use('/css', express.static(dirNode_modules + '/bootstrap/dist/css'));
 app.use('/js', express.static(dirNode_modules + '/jquery/dist'));
 app.use('/js', express.static(dirNode_modules + '/popper.js/dist'));
 app.use('/js', express.static(dirNode_modules + '/bootstrap/dist/js'));
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}));
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 // Helpers
 require('./index_helper');
+require('./adminCursos/adminCursos_helper');
 require('./miscursos_helper');
 require('./registro/registrar_helper');
 require('./login/validar-datos_helper');
@@ -34,6 +35,24 @@ app.get('/', (req,res) => {
 
 app.get('/login', (req,res) => {
   res.render('login');
+});
+
+app.get('/adminCursos', (req, res) => {
+  res.render('adminCursos');
+});
+
+app.get('/cerrar/:curso', (req,res) => {
+  curso = parseInt(req.param("curso"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.cerrarCurso(curso);
+  res.redirect('../adminCursos');
+});
+
+app.get('/eliminar/:usuario', (req,res) => {
+  usuario = parseInt(req.param("usuario"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.eliminarUsuario(usuario);
+  res.redirect('../adminCursos');
 });
 
 app.get('/registro', (req,res) => {
@@ -92,10 +111,7 @@ app.post('/crear', (req,res) => {
     intensidad: req.body.intensidad,
     modalidad: req.body.modalidad,
   })
-})
-
-
-
+});
 
 app.listen(3000, () => {
   console.log('Escuchando en el puerto 3000');

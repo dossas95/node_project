@@ -1,9 +1,16 @@
 const fs = require('fs');
 let sesionObject;
 
+<<<<<<< HEAD
+let sesionObject;
+try{
+  sesionObject = require('../public/datos/session.json');
+}catch(error){
+=======
 try{
   sesionObject = require('../public/datos/sesion.json');
 } catch(error) {
+>>>>>>> 05e9f40a07d6e7111dba6ad4a27db87bb73287bf
   sesionObject = null;
 }
 
