@@ -2,7 +2,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 hbs.registerHelper('registrado', (nom, ced, cor, tel, cont) => {
-    listaUsuarios = require('../public/datos/usuarios.json');
+    listaUsuarios = require('../../public/datos/usuarios.json');
     let usr = {
         id: ced,
         nombre: nom,

@@ -1,18 +1,26 @@
 [
-    {
-        "id": 123,
-        "nombre": "coord 1",
-        "correo": "coord1@owtf.com",
-        "celular": 5555555,
-        "rol": 0,
-        "contrasena": 1234
-    },
-    {
-        "id": "123456",
-        "nombre": "David",
-        "correo": "david@owtf.com",
-        "telefono": "123123123123123",
-        "contrasena": "123",
-        "rol": 2
-    }
+  {
+    "id": 123,
+    "nombre": "coord 1",
+    "correo": "coord1@owtf.com",
+    "celular": 5555555,
+    "rol": 0,
+    "contrasena": 1234
+  },
+  {
+    "id": "123456",
+    "nombre": "David",
+    "correo": "david@owtf.com",
+    "telefono": "123123123123123",
+    "contrasena": "123",
+    "rol": 2
+  },
+  {
+    "id": "1234",
+    "nombre": "Edwin Alvarez",
+    "correo": "edwin@owtf.com",
+    "telefono": "12345",
+    "contrasena": "12345",
+    "rol": 2
+  }
 ]

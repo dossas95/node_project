@@ -10,13 +10,13 @@ hbs.registerHelper('cursos', () => {
     <th>Valor</th>\
   </thead>\
   <tbody>';
-
+  
   index.listarCursosDisponibles().forEach(curso => {
     content = content + 
     '<tr>\
     <td>'+ curso.nombre +'</td>\
     <td>' + curso.descripcion+ '</td>\
-    <td>' + curso.costo+ '</td>\
+    <td>' + curso.valor+ '</td>\
     </tr>';
   });
     

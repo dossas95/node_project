@@ -2,7 +2,7 @@ const hbs = require('hbs');
 const fs = require('fs');
 
 hbs.registerHelper('creado', (nom, identificador, desc, val, int, mod) => {
-    listaCursos = require('../public/datos/cursos.json');
+    listaCursos = require('../../public/datos/cursos.json');
     let cur;
     if (int == ""){
         cur = {

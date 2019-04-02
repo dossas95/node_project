@@ -3,7 +3,7 @@ const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 
-const {sesion, obtenerRol} = require('./sesion');
+const {sesion, obtenerRol, eliminarSesion} = require('./sesion');
 
 const dirNode_modules = path.join(__dirname , '../node_modules')
 
@@ -56,6 +56,14 @@ app.get('/validar-datos', (req,res) => {
   });
 });
 
+app.get('/salir', (req, res) => {
+  if (eliminarSesion()) {
+    res.redirect('login');
+  } else {
+    res.redirect('validar-datos');
+  }
+});
+
 app.use((req, res, next)=>{
   if(!sesion){
     res.redirect('/');
@@ -81,10 +89,7 @@ app.post('/crear', (req,res) => {
     intensidad: req.body.intensidad,
     modalidad: req.body.modalidad,
   })
-})
-
-
-
+});
 
 app.listen(3000, () => {
   console.log('Escuchando en el puerto 3000');
