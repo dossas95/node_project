@@ -33,6 +33,20 @@ app.get('/adminCursos', (req, res) => {
   res.render('adminCursos');
 });
 
+app.get('/cerrar/:curso', (req,res) => {
+  curso = parseInt(req.param("curso"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.cerrarCurso(curso);
+  res.redirect('../adminCursos');
+});
+
+app.get('/eliminar/:usuario', (req,res) => {
+  usuario = parseInt(req.param("usuario"));
+  const adminCursos = require('./adminCursos/adminCursos');
+  adminCursos.eliminarUsuario(usuario);
+  res.redirect('../adminCursos');
+});
+
 app.use((req, res, next)=>{
   if(!sesion){
     res.redirect('/');
@@ -40,6 +54,8 @@ app.use((req, res, next)=>{
     req.next();
   }
 });
+
+
 
 
 app.listen(3000, () => {
