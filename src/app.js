@@ -19,6 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 require('./index_helper');
 require('./registrar_helper');
 require('./login/validar-datos_helper');
+require('./crear_helper');
 
 const directorioPublico = path.join(__dirname, '../public');
 app.use(express.static(directorioPublico));
@@ -46,8 +47,22 @@ app.post('/registrar', (req,res) => {
     telefono: req.body.telefono,
     contrasena: req.body.contrasena
   })
-})
+});
 
+app.get('/crear-curso', (req, res) => {
+  res.render('crear-curso');
+});
+
+app.post('/crear', (req,res) => {
+  res.render('crear', {
+    nombre: req.body.nombre,
+    identificador: req.body.identificador,
+    descripcion: req.body.descripcion,
+    valor: req.body.valor,
+    intensidad: req.body.intensidad,
+    modalidad: req.body.modalidad,
+  })
+})
 
 app.use((req, res, next)=>{
   if(!sesion){
