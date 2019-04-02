@@ -10,25 +10,25 @@
 <body class="container">
   {{session}}
   <h1>Formulario de registro</h1>
-  <form action="registrar">
+  <form action="registrar" method="POST">
   <div class="form-group">
-    <label for="inputName">Nombre</label>
+    <label>Nombre</label>
     <input type="text" class="form-control" id="inputName" name="nombre" placeholder="Ingrese nombre" required>
   </div>
   <div class="form-group">
-    <label for="inputID">Documento de identidad</label>
+    <label>Documento de identidad</label>
     <input type="text" class="form-control" id="inputID" name="id" placeholder="Ingrese documento de identidad" required>
   </div>
   <div class="form-group">
-    <label for="inputEmail1">Correo electrónico</label>
+    <label>Correo electrónico</label>
     <input type="email" class="form-control" id="inputEmail" name="correo" placeholder="Ingrese el correo electrónico" required>
   </div>
   <div class="form-group">
-    <label for="inputEmail1">Teléfono</label>
+    <label>Teléfono</label>
     <input type="text" class="form-control" id="inputPhone" name="telefono" placeholder="Ingrese el Teléfono" required>
   </div>
   <div class="form-group">
-    <label for="inputPassword1">Contraseña</label>
+    <label>Contraseña</label>
     <input type="password" class="form-control" id="inputPassword" name="contrasena" placeholder="Ingrese la contraseña" required>
   </div>
   <button type="submit" class="btn btn-primary">Registrar</button>
