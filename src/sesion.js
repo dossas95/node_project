@@ -12,6 +12,7 @@ const cargarSesion = () => {
 cargarSesion();
 const sesion = !!sesionObject;
 
+
 const obtenerRol = () => {
   cargarSesion();
   return sesionObject.rol;

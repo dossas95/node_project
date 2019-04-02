@@ -23,7 +23,7 @@ hbs.registerHelper('validarDatosLogin', (correo, pass) => {
         ' + usuario.nombre + '\
       </div>\
       <div class="salir">\
-        <a href="/salir">Salir</a>\
+        <a href="/logout">Salir</a>\
       </div>\
       <div class="accion">\
         Realizar acciones de ' + rol + ':\

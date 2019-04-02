@@ -1,7 +1,22 @@
 [
-  {
-    "curso": "ingles",
-    "participante": 123,
-    "interes": 0
-  }
-]
+    {
+      "curso": 2,
+      "participante": 125,
+      "interes": 0
+    },
+    {
+      "curso": 1,
+      "participante": 124,
+      "interes": 0
+    },
+    {
+      "curso": 1,
+      "participante": "1234",
+      "interes": 1
+    },
+    {
+      "curso": "123456",
+      "participante": "1234",
+      "interes": 0
+    }
+  ]
